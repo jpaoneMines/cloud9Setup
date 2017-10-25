@@ -1,14 +1,20 @@
 #!/bin/bash
 set -e
 
-echo -e "\033[1;31m[0%] Changing to directory /\033[0m"
+echo -e "\033[1;31m[0%] Changing to directory ~/\033[0m"
 cd ~
 echo -e "\033[1;31m[8%] Making directory /plugins\033[0m"
 mkdir -p plugins
 echo -e "\033[1;31m[15%] Changing into directory /plugins\033[0m"
 cd plugins
 echo -e "\033[1;31m[22%] Cloning Cloud9-VNC from github\033[0m"
-git clone https://github.com/acabey/cloud9-vnc.git
+if [ ! -d "cloud9-vnc" ] ; then
+	sudo git clone https://github.com/acabey/cloud9-vnc.git
+else
+	cd cloud9-vnc
+	sudo git pull
+	cd ..
+fi
 echo -e "\033[1;31m[30%] Changing into directory /plugins/cloud9-vnc\033[0m"
 cd cloud9-vnc
 echo -e "\033[1;31m[38%] Updating package repository\033[0m"
