@@ -3,7 +3,7 @@
 echo -e "\033[1;31m[0%] Changing to directory /\033[0m"
 cd ~
 echo -e "\033[1;31m[8%] Making directory /plugins\033[0m"
-mkdir plugins
+mkdir -p plugins
 echo -e "\033[1;31m[15%] Changing into directory /plugins\033[0m"
 cd plugins
 echo -e "\033[1;31m[22%] Cloning Cloud9-VNC from github\033[0m"
