@@ -7,8 +7,13 @@ sudo mkdir -p .cloud9Setup
 cd .cloud9Setup
 
 echo -e "\033[1;33m[5%] Cloning Cloud9 Setup from github\033[0m"
-sudo git clone https://github.com/jpaoneMines/cloud9Setup.git
-
+if [ ! -d "cloud9Setup" ] ; then
+	sudo git clone https://github.com/jpaoneMines/cloud9Setup.git
+else
+	cd cloud9Setup
+	sudo git pull
+	cd ..
+fi
 cd cloud9Setup
 
 sudo mkdir -p ../../.c9/runners
