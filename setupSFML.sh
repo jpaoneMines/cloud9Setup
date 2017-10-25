@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo -e "\033[1;31m[0%] Changing to directory /\033[0m"
 cd ~
@@ -13,19 +14,19 @@ cd cloud9-vnc
 echo -e "\033[1;31m[38%] Updating package repository\033[0m"
 sudo apt-get update
 echo -e "\033[1;31m[46%] Installing supervisor package\033[0m"
-sudo apt-get install supervisor
+sudo apt-get install -y supervisor
 echo -e "\033[1;31m[53%] Installing x11vnc package\033[0m"
-sudo apt-get install x11vnc
+sudo apt-get install -y x11vnc
 echo -e "\033[1;31m[61%] Installing xvfb package\033[0m"
-sudo apt-get install xvfb
+sudo apt-get install -y xvfb
 echo -e "\033[1;31m[68%] Installing fluxbox package\033[0m"
-sudo apt-get install fluxbox
+sudo apt-get install -y fluxbox
 echo -e "\033[1;31m[76%] Installing novnc package\033[0m"
-sudo apt-get install novnc
+sudo apt-get install -y novnc
 echo -e "\033[1;31m[84%] Installing Cloud9-VNC\033[0m"
 sudo ./install.sh
 echo -e "\033[1;31m[91%] Installing SFML package\033[0m"
-sudo apt-get install libsfml-dev
+sudo apt-get install -y libsfml-dev
 echo -e "\033[1;31m[98%] Returning to workspace\033[0m"
 cd /home/ubuntu/workspace
 echo -e "\033[1;31m[100%] Done!\033[0m"
